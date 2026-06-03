@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dinushika Priyadarshani — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F172A;
+    --royal: #2563EB;
+    --cyan: #38BDF8;
+    --white: #FFFFFF;
+    --slate-50: #F8FAFC;
+    --slate-100: #F1F5F9;
+    --slate-200: #E2E8F0;
+    --slate-400: #94A3B8;
+    --slate-500: #64748B;
+    --slate-700: #334155;
+    --teal: #0D9488;
+    --teal-light: #CCFBF1;
+    --gold: #D97706;
+    --gold-light: #FEF3C7;
+    --silver: #64748B;
+    --silver-light: #F1F5F9;
+    --bronze: #B45309;
+    --bronze-light: #FEF9C3;
+    --emerald: #059669;
+    --emerald-light: #ECFDF5;
+    --amber: #D97706;
+    --amber-light: #FFFBEB;
+    --rose: #E11D48;
+    --rose-light: #FFF1F2;
+    --blue-light: #EFF6FF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--navy);
+    background: var(--white);
+    line-height: 1.6;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(15,23,42,0.97);
+    backdrop-filter: blur(12px);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem; height: 64px;
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-weight: 800; color: var(--white); font-size: 1.1rem; letter-spacing: .02em; }
+  .nav-logo span { color: var(--cyan); }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+  .nav-links a { color: var(--slate-400); text-decoration: none; font-size: .82rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; transition: color .2s; }
+  .nav-links a:hover { color: var(--cyan); }
+
+  /* ─── SECTIONS GENERAL ─── */
+  section { padding: 100px 0; }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+  .section-tag { font-family: 'Playfair Display', serif; font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--royal); font-weight: 700; margin-bottom: .5rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 800; color: var(--navy); line-height: 1.1; margin-bottom: .7rem;display: inline-block;border-bottom: 3px solid var(--royal);padding-bottom: 6px; }
+  .section-title-underline { width: fit-content; height: 3px; background: var(--royal); border-radius: 2px; margin-bottom: 2.5rem; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding-top: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 70% 50%, rgba(37,99,235,.15) 0%, transparent 70%);
+  }
+  .hero-grid { display: grid; grid-template-columns: 60% 40%; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+  .hero-tag { font-family: 'Playfair Display', serif; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); font-weight: 700; margin-bottom: 1.2rem; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: .8rem; }
+  .hero-sub { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600; color: var(--cyan); letter-spacing: .04em; margin-bottom: 1.6rem; }
+  .hero-bio { color: var(--slate-400); font-size: 1rem; line-height: 1.8; max-width: 520px; margin-bottom: 2.2rem; }
+  .btn-linkedin {
+    display: inline-flex; align-items: center; gap: .6rem;
+    border: 1.5px solid rgba(255,255,255,.25); border-radius: 8px;
+    padding: .7rem 1.4rem; color: var(--white); text-decoration: none; font-size: .88rem; font-weight: 500;
+    transition: background .25s, border-color .25s, transform .2s;
+  }
+  .btn-linkedin:hover { background: var(--royal); border-color: var(--royal); transform: translateY(-2px); }
+  .btn-linkedin svg { width: 18px; height: 18px; fill: currentColor; }
+  .hero-photo-wrap {
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-photo-ring {
+    width: 280px; height: 280px; border-radius: 50%;
+    border: 2.5px solid var(--royal);
+    padding: 5px;
+    background: linear-gradient(135deg, rgba(37,99,235,.2), rgba(56,189,248,.1));
+    box-shadow: 0 0 50px rgba(37,99,235,.25);
+  }
+  .hero-photo-inner {
+    width: 100%; height: 100%; border-radius: 50%;
+    background: linear-gradient(135deg, #1e3a5f, #2563eb44);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .hero-photo-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .hero-avatar-placeholder {
+    font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 800; color: var(--cyan); opacity: .5;
+  }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 65% 35%; gap: 2rem; align-items: start; }
+  .about-card {
+    background: var(--slate-50); border-radius: 14px;
+    padding: 2rem 2.2rem; margin-bottom: 1.4rem;
+    position: relative;
+  }
+  .about-card-label { font-family: 'Playfair Display', serif; font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: var(--slate-500); font-weight: 700; margin-bottom: .8rem; display: flex; align-items: center; gap: .5rem; }
+  .about-card-label span { color: var(--royal); }
+  .about-card p { font-size: .95rem; line-height: 1.8; color: var(--slate-700); }
+  .about-card p strong { color: var(--royal); font-weight: 600; }
+  .pillar-card { background: var(--slate-100); border-radius: 14px; padding: 2rem 1.8rem; }
+  .pillar-title { font-family: 'Playfair Display', serif; font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-500); font-weight: 700; margin-bottom: 1.4rem; }
+  .pillar-row { padding: 1rem 0; border-bottom: 1px solid var(--slate-200); }
+  .pillar-row:last-child { border-bottom: none; }
+  .pillar-row-head { display: flex; align-items: center; gap: .5rem; margin-bottom: .3rem; }
+  .pillar-dash { width: 18px; height: 2px; background: var(--royal); border-radius: 2px; flex-shrink: 0; }
+  .pillar-row-name { font-family: 'Playfair Display', serif; font-size: .8rem; font-weight: 700; text-transform: uppercase; color: var(--navy); letter-spacing: .05em; }
+  .pillar-row p { font-size: .83rem; color: var(--slate-500); padding-left: 1.5rem; }
+
+  /* ─── ACADEMIC ─── */
+  #academic { background: var(--slate-50); }
+  .timeline { position: relative; padding-left: 48px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--slate-200); border-radius: 2px; }
+  .timeline-item { position: relative; margin-bottom: 3rem; }
+  .timeline-node {
+    position: absolute; left: -42px; top: 4px;
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 1;
+  }
+  .timeline-node.royal { background: var(--royal); box-shadow: 0 0 0 5px rgba(37,99,235,.15); }
+  .timeline-node.teal { background: var(--teal); box-shadow: 0 0 0 5px rgba(13,148,136,.15); }
+  .timeline-card { background: var(--white); border-radius: 14px; padding: 2rem 2.2rem; box-shadow: 0 2px 18px rgba(15,23,42,.07); }
+  .timeline-badge {
+    display: inline-flex; align-items: center; gap: .4rem;
+    padding: .2rem .8rem; border-radius: 20px; font-size: .75rem; font-weight: 600; font-family: 'Playfair Display', serif; margin-bottom: 1rem;
+  }
+  .badge-royal { background: var(--blue-light); color: var(--royal); }
+  .badge-teal { background: var(--teal-light); color: var(--teal); }
+  .timeline-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+  .timeline-card .inst { font-size: .88rem; color: var(--slate-500); margin-bottom: 1rem; }
+  .timeline-focus { border-left: 3px solid var(--royal); padding-left: 1rem; margin-bottom: 1.2rem; }
+  .timeline-focus.teal-border { border-color: var(--teal); }
+  .timeline-focus p { font-size: .88rem; color: var(--slate-700); line-height: 1.7; }
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: .5rem;
+    border: 1.5px solid; border-radius: 8px; padding: .45rem 1rem;
+    font-size: .82rem; font-weight: 500; text-decoration: none; cursor: pointer; background: transparent;
+    transition: background .22s, color .22s, transform .18s;
+  }
+  .btn-outline.royal { border-color: var(--royal); color: var(--royal); }
+  .btn-outline.royal:hover { background: var(--royal); color: var(--white); transform: translateY(-2px); }
+  .btn-outline.teal { border-color: var(--teal); color: var(--teal); }
+  .btn-outline.teal:hover { background: var(--teal); color: var(--white); transform: translateY(-2px); }
+
+  /* ─── PROJECTS ─── */
+  #projects { background: var(--white); }
+  .projects-table-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 2px 24px rgba(15,23,42,.09); }
+  .projects-table { width: 100%; border-collapse: collapse; }
+  .projects-table thead { background: var(--navy); }
+  .projects-table thead th { padding: 1rem 1.4rem; color: var(--white); font-family: 'Playfair Display', serif; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; text-align: left; font-weight: 700; }
+  .projects-table tbody tr { background: var(--white); border-bottom: 1px solid var(--slate-200); transition: background .18s, transform .15s; }
+  .projects-table tbody tr:nth-child(even) { background: var(--slate-50); }
+  .projects-table tbody tr:hover { background: #EFF6FF; transform: translateY(-1px); }
+  .projects-table td { padding: 1.3rem 1.4rem; font-size: .9rem; color: var(--slate-700); vertical-align: top; }
+  .proj-cat { font-family: 'Playfair Display', serif; font-size: .8rem; font-weight: 700; color: var(--navy); }
+  .proj-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); }
+  .badge-tech {
+    display: inline-block; margin: .2rem .2rem 0 0;
+    padding: .2rem .65rem; border-radius: 20px; font-size: .72rem; font-weight: 600;
+  }
+  .badge-tech.blue { background: var(--blue-light); color: #1E40AF; }
+  .badge-tech.gray { background: var(--slate-100); color: var(--slate-700); }
+  .proj-desc { font-size: .87rem; color: var(--slate-500); line-height: 1.65; margin-bottom: .7rem; }
+  .proj-link { color: var(--royal); font-size: .83rem; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: .3rem; }
+  .proj-link:hover { text-decoration: underline; }
+
+  /* ─── ACHIEVEMENTS ─── */
+  #achievements { background: var(--slate-50); }
+  .ach-intro { font-size: .9rem; color: var(--slate-500); font-style: italic; max-width: 700px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .ach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .ach-card {
+    background: var(--white); border-radius: 14px; padding: 1.6rem 1.5rem;
+    box-shadow: 0 2px 14px rgba(15,23,42,.07);
+    display: flex; flex-direction: column; gap: .8rem;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .ach-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(15,23,42,.12); }
+  .medal-badge { display: inline-flex; padding: .2rem .7rem; border-radius: 20px; font-family: 'Playfair Display', serif; font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; width: fit-content; }
+  .medal-gold { background: var(--gold-light); color: var(--gold); }
+  .medal-silver { background: var(--silver-light); color: var(--silver); }
+  .medal-bronze { background: var(--bronze-light); color: var(--bronze); }
+  .ach-card h4 { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+  .ach-card .ach-event { font-size: .83rem; color: var(--slate-500); }
+  .ach-cert-link { display: inline-flex; align-items: center; gap: .35rem; color: var(--royal); font-size: .8rem; font-weight: 500; text-decoration: none; margin-top: auto; }
+  .ach-cert-link:hover { color: var(--navy); text-decoration: underline; }
+
+  /* ─── LEADERSHIP ─── */
+  #leadership { background: var(--white); }
+  .leader-card {
+    border-left: 5px solid var(--navy); border-radius: 0 14px 14px 0;
+    background: var(--slate-50); padding: 2rem 2.4rem; margin-bottom: 1.5rem;
+  }
+  .leader-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; display: flex; align-items: center; gap: .6rem; }
+  .leader-card p { font-size: .93rem; color: var(--slate-700); line-height: 1.8; margin-bottom: 1.2rem; }
+  .cert-btn-row { display: flex; gap: .8rem; flex-wrap: wrap; }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--slate-50); }
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .skill-card { background: var(--white); border-radius: 14px; padding: 2rem; box-shadow: 0 2px 14px rgba(15,23,42,.07); }
+  .skill-card-head { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.5rem; }
+  .skill-icon { width: 38px; height: 38px; background: var(--blue-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--royal); }
+  .skill-card-head h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.5rem; }
+  .skill-tag { background: var(--slate-100); color: var(--navy); font-size: .82rem; font-weight: 500; padding: .35rem .85rem; border-radius: 20px; display: flex; align-items: center; gap: .35rem; }
+  .skill-tag svg { color: var(--royal); }
+  .skill-divider { height: 1px; background: var(--slate-200); margin-bottom: 1rem; }
+  .skill-evidence { font-size: .83rem; color: var(--slate-500); line-height: 1.6; margin-bottom: 1rem; }
+
+  /* ─── INTERESTS ─── */
+  #interests { background: var(--white); }
+  .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .interest-card { background: var(--slate-50); border-radius: 14px; padding: 2rem; border: 1px solid var(--slate-200); }
+  .interest-card h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; display: flex; align-items: center; gap: .5rem; }
+  .interest-card h3 svg { color: var(--royal); }
+  .interest-card p { font-size: .9rem; color: var(--slate-700); line-height: 1.8; }
+  .interest-card p strong { color: var(--navy); font-weight: 600; }
+  .hobby-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: .5rem; }
+  .hobby-badge {
+    background: var(--white); border: 1px solid var(--slate-200); border-radius: 10px;
+    padding: .7rem .9rem; display: flex; align-items: center; gap: .5rem;
+    font-size: .84rem; color: var(--navy); font-weight: 500; cursor: default;
+    transition: background .2s, border-color .2s, transform .15s;
+  }
+  .hobby-badge:hover { background: var(--blue-light); border-color: var(--royal); transform: translateY(-2px); }
+  .hobby-badge svg { color: var(--royal); flex-shrink: 0; }
+
+  /* ─── SWOT ─── */
+  #swot { background: var(--slate-50); }
+  .swot-intro { font-size: .9rem; color: var(--slate-500); font-style: italic; max-width: 700px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .swot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .swot-card { border-radius: 14px; padding: 2rem 2rem 2rem 2.2rem; border-left: 5px solid; }
+  .swot-s { background: var(--emerald-light); border-color: var(--emerald); }
+  .swot-w { background: var(--amber-light); border-color: var(--amber); }
+  .swot-o { background: var(--blue-light); border-color: var(--royal); }
+  .swot-t { background: var(--rose-light); border-color: var(--rose); }
+  .swot-head { display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem; }
+  .swot-head h3 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 800; color: var(--navy); }
+  .swot-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+  .swot-list li { font-size: .87rem; color: var(--slate-700); line-height: 1.6; padding-left: 1.1rem; position: relative; }
+  .swot-list li::before { content: '—'; position: absolute; left: 0; color: var(--royal); font-weight: 700; }
+  .swot-s .swot-list li::before { color: var(--emerald); }
+  .swot-w .swot-list li::before { color: var(--amber); }
+  .swot-t .swot-list li::before { color: var(--rose); }
+  .swot-list li strong { color: var(--navy); font-weight: 600; }
+
+  /* ─── VALUES ─── */
+  #values { background: var(--white); }
+  .values-intro { font-size: .9rem; color: var(--slate-500); font-style: italic; max-width: 700px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .values-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-bottom: 1.4rem; }
+  .values-bottom { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .value-card {
+    background: var(--white); border-radius: 14px; padding: 1.8rem 1.7rem;
+    box-shadow: 0 2px 14px rgba(15,23,42,.08);
+    border-top: 3px solid var(--royal);
+    transition: transform .2s, box-shadow .2s;
+  }
+  .value-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(15,23,42,.12); }
+  .value-icon { width: 38px; height: 38px; background: var(--blue-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--royal); margin-bottom: 1rem; }
+  .value-card h4 { font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; }
+  .value-card p { font-size: .84rem; color: var(--slate-500); line-height: 1.7; }
+
+  /* ─── GOALS ─── */
+  #goals { background: var(--slate-50); }
+  .goals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .goal-card { background: var(--white); border-radius: 14px; padding: 2rem; box-shadow: 0 2px 14px rgba(15,23,42,.07); }
+  .goal-card-head { margin-bottom: 1.5rem; }
+  .goal-card-head h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: .2rem; }
+  .goal-card-head p { font-size: .8rem; color: var(--slate-500); }
+  .goal-spine { position: relative; padding-left: 2.2rem; }
+  .goal-spine::before { content: ''; position: absolute; left: 9px; top: 0; bottom: 0; width: 1.5px; background: var(--slate-200); }
+  .goal-node { position: relative; margin-bottom: 1.4rem; }
+  .goal-node-dot {
+    position: absolute; left: -2.2rem; top: 2px;
+    width: 22px; height: 22px; border-radius: 50%; background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: .62rem; font-weight: 800; color: var(--white);
+    z-index: 1;
+  }
+  .goal-node h4 { font-family: 'Playfair Display', serif; font-size: .82rem; font-weight: 700; color: var(--navy); margin-bottom: .3rem; }
+  .goal-node-body { font-size: .83rem; color: var(--slate-500); line-height: 1.6; }
+  .goal-node ul { list-style: none; margin-top: .3rem; }
+  .goal-node ul li { padding-left: .9rem; position: relative; font-size: .83rem; color: var(--slate-500); margin-bottom: .2rem; }
+  .goal-node ul li::before { content: '—'; position: absolute; left: 0; color: var(--royal); font-weight: 700; font-size: .8rem; }
+  .goal-footer { margin-top: 1.4rem; padding: .7rem 1rem; background: var(--slate-50); border-radius: 8px; font-family: 'Playfair Display', serif; font-size: .75rem; color: var(--slate-500); font-weight: 600; }
+
+  /* ─── CAREER GOAL ─── */
+  #career { background: var(--navy); padding: 100px 0; }
+  #career .section-tag { color: var(--cyan); }
+  #career .section-title { color: var(--white); }
+  #career .section-title-underline { background: var(--cyan); }
+  .career-card { border: 1px solid rgba(255,255,255,.1); border-radius: 18px; padding: 3.5rem; background: rgba(255,255,255,.04); backdrop-filter: blur(8px); }
+  .career-target { font-family: 'Playfair Display', serif; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--slate-400); margin-bottom: .5rem; }
+  .career-role { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: var(--cyan); margin-bottom: 1.5rem; }
+  .career-mission { font-size: 1rem; color: rgba(255,255,255,.8); line-height: 1.8; margin-bottom: 2.2rem; max-width: 720px; }
+  .career-pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-bottom: 2.5rem; }
+  .pillar-item { background: rgba(255,255,255,.06); border-radius: 12px; padding: 1.2rem; border: 1px solid rgba(255,255,255,.08); }
+  .pillar-item h5 { font-family: 'Playfair Display', serif; font-size: .78rem; font-weight: 700; color: var(--cyan); margin-bottom: .4rem; text-transform: uppercase; letter-spacing: .05em; }
+  .pillar-item p { font-size: .8rem; color: var(--slate-400); line-height: 1.5; }
+  .career-tagline { text-align: center; font-family: 'Playfair Display', serif; font-size: .85rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: 1rem; }
+
+  /* ─── GAP ANALYSIS ─── */
+  #gap { background: var(--white); }
+  .gap-intro { font-size: .9rem; color: var(--slate-500); font-style: italic; max-width: 700px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .gap-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .gap-card { background: var(--slate-50); border-radius: 14px; overflow: hidden; border: 1px solid var(--slate-200); }
+  .gap-card-head { padding: 1.4rem 1.6rem; background: var(--white); border-bottom: 1px solid var(--slate-200); display: flex; align-items: center; gap: .7rem; }
+  .gap-card-head svg { color: var(--royal); }
+  .gap-card-head h3 { font-family: 'Playfair Display', serif; font-size: .9rem; font-weight: 700; color: var(--navy); }
+  .gap-section { padding: 1.3rem 1.6rem; }
+  .gap-section-label { font-family: 'Playfair Display', serif; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; color: var(--slate-500); font-weight: 700; margin-bottom: .8rem; }
+  .gap-list { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+  .gap-list li { font-size: .83rem; color: var(--slate-500); padding-left: .9rem; position: relative; line-height: 1.5; }
+  .gap-list li::before { content: '·'; position: absolute; left: 0; color: var(--slate-400); }
+  .gap-arrow { display: flex; align-items: center; justify-content: center; padding: .6rem; color: var(--royal); font-size: 1.1rem; border-top: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200); background: var(--blue-light); font-weight: 700; }
+  .gap-list.target li { color: var(--navy); }
+  .gap-list.target li::before { content: '·'; color: var(--royal); }
+  .gap-list.target li strong { color: var(--royal); font-weight: 600; }
+
+  /* ─── ACTION PLAN ─── */
+  #action { background: var(--slate-50); }
+  .action-intro { font-size: .9rem; color: var(--slate-500); font-style: italic; max-width: 740px; margin-bottom: 2.5rem; line-height: 1.7; }
+  .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; }
+  .action-card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: 0 2px 14px rgba(15,23,42,.07); }
+  .action-card-header { padding: 1.5rem 1.8rem; display: flex; align-items: center; gap: 1rem; }
+  .action-card-header.y1 { background: var(--slate-500); }
+  .action-card-header.y2 { background: var(--royal); }
+  .action-card-header.y3 { background: var(--navy); }
+  .action-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 800; color: rgba(255,255,255,.3); }
+  .action-head-text h3 { font-family: 'Playfair Display', serif; font-size: .9rem; font-weight: 800; color: var(--white); }
+  .action-head-text p { font-size: .75rem; color: rgba(255,255,255,.65); }
+  .action-body { padding: 1.6rem 1.8rem; }
+  .action-focus { font-size: .83rem; color: var(--slate-500); margin-bottom: 1.2rem; font-style: italic; line-height: 1.6; }
+  .action-items { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+  .action-items li { display: flex; gap: .7rem; font-size: .85rem; color: var(--slate-700); line-height: 1.5; align-items: flex-start; }
+  .check-box { width: 16px; height: 16px; border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+  .check-filled { background: var(--royal); display: flex; align-items: center; justify-content: center; }
+  .check-empty { border: 1.5px solid var(--slate-300); }
+  .action-items li strong { color: var(--navy); font-weight: 600; }
+
+  /* ─── FOOTER ─── */
+  footer { background: var(--navy); padding: 3rem 0; text-align: center; }
+  footer p { color: var(--slate-400); font-size: .82rem; }
+  footer span { color: var(--cyan); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-grid, .about-grid, .skills-grid, .interests-grid, .goals-grid, .values-top, .values-bottom { grid-template-columns: 1fr; }
+    .ach-grid, .swot-grid, .gap-grid, .action-grid, .career-pillars { grid-template-columns: 1fr 1fr; }
+    .hero-photo-wrap { display: none; }
+    .values-top { grid-template-columns: 1fr 1fr; }
+    nav { padding: 0 1.2rem; }
+    .nav-links { gap: .8rem; }
+    .career-card { padding: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .ach-grid, .swot-grid, .gap-grid, .action-grid, .career-pillars, .values-top, .values-bottom { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .section-title { font-size: 1.8rem; }
+    .nav-links { display: none; }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">DP<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#academic">Academic</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#swot">SWOT</a></li>
+    <li><a href="#career">Career</a></li>
+    <li><a href="#action">Plan</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 1 — HERO
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <p class="hero-tag">Welcome to my portfolio</p>
+        <h1 class="hero-name">Hi, I'm Dinushika<br>Priyadarshani.</h1>
+        <p class="hero-sub">Undergraduate-B.Sc.(General) Applied Sciences &nbsp;</p>
+        <p class="hero-bio">I specialize in keeping information structured, software running smoothly, and administrative tasks on track. Let's build something organized together!</p>
+        <a href="https://www.linkedin.com/in/dinushika-priyadarshani" target="_blank" class="btn-linkedin">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect on LinkedIn
+        </a>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring">
+          <div class="hero-photo-inner">
+            <img src="profile1.jpeg" alt="Dinushika Priyadarshani" class="hero-avatar-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 2 — ABOUT
+═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="container fade-up">
+    <p class="section-tag">Get to know me</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-title-underline"></div>
+    <div class="about-grid">
+      <div>
+        <div class="about-card">
+          <div class="about-card-label"><span>01</span> / The Spark</div>
+          <p>My journey is driven by a mix of personal discipline and a genuine love for technology. As an <strong>Applied Sciences</strong> student, working on hands on web and mobile development projects sparked my deep interest in <strong>information systems</strong>. It showed me firsthand how data is captured, organized, and put to work in the digital world.</p>
+        </div>
+        <div class="about-card" style="background: var(--slate-100);">
+          <div class="about-card-label"><span>02</span> / The Foundation</div>
+          <p>Outside the classroom, my character was built on the karate and through student leadership. Years of martial arts taught me the value of focus, patience, and resilience, while serving as a Senior Prefect helped me become a reliable leader and a clear, highly effective communicator.</p>
+        </div>
+      </div>
+      <div>
+        <div class="pillar-card">
+          <div class="pillar-title">Core Traits</div>
+          <div class="pillar-row">
+            <div class="pillar-row-head">
+              <div class="pillar-dash"></div>
+              <span class="pillar-row-name">Discipline</span>
+            </div>
+            <p>Disciplined by the karate, driven by the deadline..</p>
+          </div>
+          <div class="pillar-row">
+            <div class="pillar-row-head">
+              <div class="pillar-dash"></div>
+              <span class="pillar-row-name">Leadership</span>
+            </div>
+            <p>Cultivated as a Senior Prefect. Proven coordinator and team facilitator.</p>
+          </div>
+          <div class="pillar-row">
+            <div class="pillar-row-head">
+              <div class="pillar-dash"></div>
+              <span class="pillar-row-name">Execution</span>
+            </div>
+            <p>Technical academic foundation focusing on systems, data logic, and structural analysis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 3 — ACADEMIC
+═══════════════════════════════════════════ -->
+<section id="academic">
+  <div class="container fade-up">
+    <p class="section-tag">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:.4rem"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      Education
+    </p>
+    <h2 class="section-title">My Academic Journey</h2>
+    <div class="section-title-underline"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-node royal"></div>
+        <div class="timeline-card">
+          <div class="timeline-badge badge-royal">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2023 – Present
+          </div>
+          <h3>B.Sc. (General) Degree in Applied Sciences</h3>
+          <p class="inst">Rajarata University of Sri Lanka</p>
+          <div class="timeline-focus">
+            <p>Building a strong foundation in computational logic, analytical thinking, and real-world project development to process information systems.</p>
+          </div>
+         
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-node teal"></div>
+        <div class="timeline-card">
+          <div class="timeline-badge badge-teal">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            2021 – 2022
+          </div>
+          <h3>NVQ Level 4 Certification</h3>
+          <p class="inst">Vocational Training Authority (VTA)</p>
+          <div class="timeline-focus teal-border">
+            <p>Developing baseline vocational workplace readiness, practical office IT applications, database logic, and professional administrative discipline.</p>
+          </div>
+          <a href="NVQ.pdf" class="btn-outline teal">
+            View Certificate
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 4 — PROJECTS
+═══════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container fade-up">
+    <p class="section-tag">Engineering</p>
+    <h2 class="section-title">Featured Technical Projects</h2>
+    <div class="section-title-underline"></div>
+    <div class="projects-table-wrap">
+      <table class="projects-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Project Title</th>
+            <th>Tech Stack</th>
+            <th>Scope &amp; Deliverables</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="proj-cat">Mobile Application</span></td>
+            <td><span class="proj-title">Smart Park Mobile App</span></td>
+            <td>
+              <span class="badge-tech blue">React Native</span>
+              <span class="badge-tech blue">Python</span>
+              <span class="badge-tech blue">Image Segmentation</span>
+            </td>
+            <td>
+              <p class="proj-desc">Developed to optimize parking management efficiency by processing visual data to map out open spots and separate traffic paths systematically without hardware dependencies.</p>
+              <a href="https://github.com/shakyakahangama/smartpark_project_repo.git" class="proj-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                View GitHub Repository
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td><span class="proj-cat">Web Application</span></td>
+            <td><span class="proj-title">Galle District Portal</span></td>
+            <td>
+              <span class="badge-tech gray">HTML</span>
+              <span class="badge-tech gray">JavaScript</span>
+              <span class="badge-tech gray">CSS</span>
+            </td>
+            <td>
+              <p class="proj-desc">Built to manage and present complex district-level informational data in a highly structured, responsive, and user-friendly directory layout.</p>
+              <a href="https://github.com/Dinushika0/Galle_District" class="proj-link">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                View GitHub Repository
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 5 — ACHIEVEMENTS
+═══════════════════════════════════════════ -->
+<section id="achievements">
+  <div class="container fade-up">
+    <p class="section-tag">Athletics</p>
+    <h2 class="section-title">Achievements</h2>
+    <div class="section-title-underline"></div>
+    <p class="ach-intro">A record of competitive athletic excellence showcasing the long-term personal discipline, resilience, and focus brought into technical operations.</p>
+    <div class="ach-grid">
+      <!-- Gold row -->
+      <div class="ach-card">
+        <span class="medal-badge medal-gold">🥇 Gold — 1st Place/🥉 Bronze — 3rd Place</span>
+        <h4>National Karate Championship</h4>
+        <p class="ach-event">Kumite &amp; Kata Event</p>
+        <a href="1.pdf" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+      <div class="ach-card">
+        <span class="medal-badge medal-gold">🥇 Gold — 1st Places</span>
+        <h4>Southern Province Karate Championship</h4>
+        <p class="ach-event">Kumite &amp; Kata Event</p>
+        <a href="2.pdf" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+      <div class="ach-card">
+        <span class="medal-badge medal-gold">🥇 Gold — 1st Places</span>
+        <h4>Galle District Karate Championship</h4>
+        <p class="ach-event">Kumite &amp; Kata Event</p>
+        <a href="3.pdf" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+      <!-- Silver -->
+      <div class="ach-card">
+        <span class="medal-badge medal-silver">🥈 Silver — 2nd Place</span>
+        <h4>Southern Province School Games (U17)</h4>
+        <p class="ach-event">Kata Event</p>
+        <a href="2014.jpeg" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+      <!-- Bronze -->
+      <div class="ach-card">
+        <span class="medal-badge medal-bronze">🥉 Bronze — 3rd Place</span>
+        <h4>Southern Province School Games (U19)</h4>
+        <p class="ach-event">Kata Event</p>
+        <a href="2016.jpeg" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+      <div class="ach-card">
+        <span class="medal-badge medal-bronze">🥉 Bronze — 3rd Place</span>
+        <h4>Southern Province School Games (U15)</h4>
+        <p class="ach-event">Kata Event</p>
+        <a href="2013.jpeg" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+      <div class="ach-card" style="grid-column: 1 / span 3;">
+        <span class="medal-badge medal-bronze">🥉 Bronze — 3rd Place</span>
+        <h4>All Island Schools Junior National Championship</h4>
+        <p class="ach-event">Karate Event</p>
+        <a href="7.jpeg" class="ach-cert-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          View Certificate
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 6 — LEADERSHIP
+═══════════════════════════════════════════ -->
+<section id="leadership">
+  <div class="container fade-up">
+    <p class="section-tag">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle;margin-right:.4rem"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Experience
+    </p>
+    <h2 class="section-title">Leadership Experience</h2>
+    <div class="section-title-underline"></div>
+    <div class="leader-card">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Senior Prefect &nbsp;<span style="color:var(--slate-400);font-weight:400;font-size:.85rem">2014–2015 &amp; 2015–2016</span>
+      </h3>
+      <p>During my time as a Senior Prefect, I took on important responsibilities that helped me develop strong leadership, discipline, and communication skills. I worked closely with teachers and students to maintain school discipline, support daily activities, and ensure a well organized school environment. This role helped me learn how to handle responsibilities with fairness, respect, and consistency while improving my ability to coordinate with others and manage situations calmly and effectively.</p>
+      <div class="cert-btn-row">
+        <a href="PB2014.jpeg" class="btn-outline royal">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Certificate 1
+        </a>
+        <a href="PB2015.jpeg" class="btn-outline royal">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Certificate 2
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 7 — SKILLS
+═══════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container fade-up">
+    <p class="section-tag">Capabilities</p>
+    <h2 class="section-title">Skills &amp; Credentials</h2>
+    <div class="section-title-underline"></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-head">
+          <div class="skill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Technical Skills</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Python Programming
+          </span>
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+            HTML
+          </span>
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            JavaScript
+          </span>
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            PHP
+          </span>
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            Microsoft Office Suite
+          </span>
+        </div>
+        <div class="skill-divider"></div>
+        <p class="skill-evidence">These skills are demonstrated through academic work, vocational training, and practical development projects.</p>
+        <a href="#projects" class="btn-outline royal" style="font-size:.8rem;">Projects &amp; Work Evidence ↗</a>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-head">
+          <div class="skill-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Soft Skills</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Communication Skills
+          </span>
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Time Management
+          </span>
+          <span class="skill-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Teamwork &amp; Collaboration
+          </span>
+        </div>
+        <div class="skill-divider"></div>
+        <p class="skill-evidence">These skills were developed through leadership roles, group activities, and sports discipline.</p>
+        <a href="#leadership" class="btn-outline royal" style="font-size:.8rem;">Leadership &amp; Activities ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 8 — INTERESTS
+═══════════════════════════════════════════ -->
+<section id="interests">
+  <div class="container fade-up">
+    <p class="section-tag">Passions</p>
+    <h2 class="section-title">Interests &amp; Hobbies</h2>
+    <div class="section-title-underline"></div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          Technical &amp; Professional Interests
+        </h3>
+        <p>I am dedicated to continuously learning and advancing my skill set within modern <strong>technology and data focused domains</strong>. I enjoy mapping out information systems architectures and assessing how analytical data pipelines can be leveraged to drive objective, strategic decision making in enterprise environments, alongside a keen focus on <strong>software engineering</strong> and innovative frameworks.</p>
+      </div>
+      <div class="interest-card">
+        <h3>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          Lifestyle &amp; Personal Hobbies
+        </h3>
+        <div class="hobby-grid">
+          <div class="hobby-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Continuous Learning
+          </div>
+          <div class="hobby-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Cricket Analytics
+          </div>
+          <div class="hobby-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Martial Arts (Karate)
+          </div>
+          <div class="hobby-badge">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            Software &amp; Tech Tools
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 9 — SWOT
+═══════════════════════════════════════════ -->
+<section id="swot">
+  <div class="container fade-up">
+    <p class="section-tag">Self Assessment</p>
+    <h2 class="section-title">SWOT Analysis</h2>
+    <div class="section-title-underline"></div>
+    <p class="swot-intro">A strategic self assessment mapping current technical capabilities and growth trajectory against the evolving data management landscape.</p>
+    <div class="swot-grid">
+      <div class="swot-card swot-s">
+        <div class="swot-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          <h3>Strengths</h3>
+        </div>
+        <ul class="swot-list">
+          <li><strong>Strong discipline</strong> and focus developed through martial arts (Karate) training</li>
+          <li><strong>Solid foundational</strong> knowledge of IT tools and core programming principles</li>
+          <li><strong>Hands on experience</strong> with academic web and mobile development projects</li>
+          <li><strong>Leadership, administrative,</strong> and coordination experience as a Senior Prefect</li>
+          <li><strong>Demonstrated teamwork,</strong> communication, and proactive time management</li>
+        </ul>
+      </div>
+      <div class="swot-card swot-w">
+        <div class="swot-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <h3>Weaknesses</h3>
+        </div>
+        <ul class="swot-list">
+          <li><strong>Limited real world</strong> commercial industry experience in large enterprise contexts</li>
+          <li><strong>Need to continually advance</strong> database querying skills and advanced Excel manipulation</li>
+          <li><strong>Limited hands on exposure</strong> to proprietary corporate, large scale data systems</li>
+          <li><strong>Currently building confidence</strong> in fast paced professional workplace environments</li>
+        </ul>
+      </div>
+      <div class="swot-card swot-o">
+        <div class="swot-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          <h3>Opportunities</h3>
+        </div>
+        <ul class="swot-list">
+          <li><strong>Growing national demand</strong> for dedicated data administration and IT support in Sri Lanka</li>
+          <li><strong>High availability</strong> of tactical internships within fast evolving IT and administrative sectors</li>
+          <li><strong>Immediate growth potential</strong> through online certifications in advanced data architectures</li>
+          <li><strong>Increasing reliance</strong> on digital transformation frameworks within modern organizations</li>
+        </ul>
+      </div>
+      <div class="swot-card swot-t">
+        <div class="swot-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <h3>Threats</h3>
+        </div>
+        <ul class="swot-list">
+          <li><strong>Intensely competitive landscape</strong> within the entry level technical and analytical market</li>
+          <li><strong>Rapidly shifting digital technologies</strong> requiring aggressive, continuous self guided upskilling</li>
+          <li><strong>Employer preference</strong> for substantial practical experience over academic knowledge</li>
+          <li><strong>Escalating expectations</strong> for complex programming skills in junior data administrative roles</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 10 — VALUES
+═══════════════════════════════════════════ -->
+<section id="values">
+  <div class="container fade-up">
+    <p class="section-tag">Principles</p>
+    <h2 class="section-title">Personal Values</h2>
+    <div class="section-title-underline"></div>
+    <p class="values-intro">The foundational principles guiding my technical development, collaboration style, and professional growth.</p>
+    <div class="values-top">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h4>Integrity</h4>
+        <p>Dedicated to absolute honesty and responsibility in both academic undertakings and daily life, recognizing that professional trust is the anchor of sustainable, high impact career progression.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Discipline</h4>
+        <p>A foundational value refined through years of dedicated martial arts training. It enables me to remain focused, manage deadlines meticulously, and drive consistency across all technical objectives.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Respect</h4>
+        <p>A deep respect for diverse ideas, technical viewpoints, and collaborative environments, firmly believing that active, open interpersonal communication fosters a thriving corporate workflow.</p>
+      </div>
+    </div>
+    <div class="values-bottom">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h4>Continuous Learning</h4>
+        <p>Strongly committed to expanding limits by proactively upgrading my skillset in data systems and modern programming architectures to meet changing technology requirements.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h4>Responsibility</h4>
+        <p>I accept absolute ownership of my assignments, striving to deliver every data asset and project component with uncompromising precision and care, establishing solid reliability for recruiters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 11 — GOALS (SMART + SAFE)
+═══════════════════════════════════════════ -->
+<section id="goals" style="background: var(--slate-50);">
+  <div class="container fade-up">
+    <p class="section-tag">Strategy</p>
+    <h2 class="section-title">Goal Setting Process</h2>
+    <div class="section-title-underline"></div>
+    <p style="font-size:.9rem;color:var(--slate-500);font-style:italic;max-width:700px;margin-bottom:2.5rem;line-height:1.7;">A highly structured, parallel framework designed to guide my career progression towards becoming a Data Management Assistant.</p>
+    <div class="goals-grid">
+      <!-- SMART -->
+      <div class="goal-card">
+        <div class="goal-card-head">
+          <h3>🧭 SMART Model</h3>
+          <p>Strategic Blueprint</p>
+        </div>
+        <div class="goal-spine">
+          <div class="goal-node">
+            <div class="goal-node-dot">S</div>
+            <h4>Specific Target</h4>
+            <p class="goal-node-body">Secure a role managing, organizing, and maintaining precise organizational data systems.</p>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">M</div>
+            <h4>Measurable Milestones</h4>
+            <ul>
+              <li>Completing professional data administration certifications</li>
+              <li>Advancing intermediate relational database &amp; Excel skills</li>
+              <li>Delivering structured university software projects</li>
+            </ul>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">A</div>
+            <h4>Achievable Path</h4>
+            <p class="goal-node-body">Backed by academic IT foundations, practical design assignments, and self guided workflows.</p>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">R</div>
+            <h4>Relevant Objective</h4>
+            <p class="goal-node-body">Perfectly aligned with interest in data handling architectures and administrative support.</p>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">T</div>
+            <h4>Time-Bound Horizon</h4>
+            <p class="goal-node-body">Target window of 3 years post graduation for complete goal acquisition.</p>
+          </div>
+        </div>
+      </div>
+      <!-- SAFE -->
+      <div class="goal-card">
+        <div class="goal-card-head">
+          <h3>🔥 SAFE Model</h3>
+          <p>Operational Mindset</p>
+        </div>
+        <div class="goal-spine">
+          <div class="goal-node">
+            <div class="goal-node-dot">S</div>
+            <h4>Simple Core Focus</h4>
+            <p class="goal-node-body">Step by step masteries in data entry, basic query design, and administrative software platforms.</p>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">A</div>
+            <h4>Action Framework</h4>
+            <ul>
+              <li>Daily practice of complex spreadsheet manipulations</li>
+              <li>Developing real utility scripts and web projects</li>
+              <li>Proactive scheduling of specialized e-learning certs</li>
+            </ul>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">F</div>
+            <h4>Flexible Adaptation</h4>
+            <p class="goal-node-body">Ready to adapt to modern workplace tools, cloud systems, and dynamic office administration structures.</p>
+          </div>
+          <div class="goal-node">
+            <div class="goal-node-dot">E</div>
+            <h4>Exciting Growth</h4>
+            <p class="goal-node-body">Driven by constructing utility tools, discovering algorithms, and embarking on data system transformations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 12 — CAREER GOAL
+═══════════════════════════════════════════ -->
+<section id="career">
+  <div class="container fade-up">
+    <p class="section-tag">Vision</p>
+    <h2 class="section-title">Career Goal</h2>
+    <div class="section-title-underline"></div>
+    <div class="career-card">
+      <p class="career-target">Target Objective</p>
+      <h3 class="career-role">Data Management Assistant</h3>
+      <p class="career-mission">My career goal is to secure a role as a professional Data Management Assistant in a reputed organization. I aim to apply my skills in data handling, information organization, and administrative management to build robust system infrastructures that support strategic, efficient decision making.</p>
+      <div class="career-pillars">
+        <div class="pillar-item">
+          <h5>Data Precision</h5>
+          <p>Passionate about managing structured data, maintaining accurate records, and driving systematic efficiency.</p>
+        </div>
+        <div class="pillar-item">
+          <h5>Skill Ascent</h5>
+          <p>Continuously upgrading administrative and coding foundations via targeted practical projects.</p>
+        </div>
+        <div class="pillar-item">
+          <h5>Proven Execution</h5>
+          <p>Synthesizing university IT knowledge, karate discipline, and leadership backgrounds to enter the field responsibly.</p>
+        </div>
+        <div class="pillar-item">
+          <h5>Reliable Output</h5>
+          <p>Striving to become a highly dependable, value adding technical professional contributing to corporate success.</p>
+        </div>
+      </div>
+      <p class="career-tagline">Reliability &nbsp;·&nbsp; Accuracy &nbsp;·&nbsp; Efficiency</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 13 — GAP ANALYSIS
+═══════════════════════════════════════════ -->
+<section id="gap">
+  <div class="container fade-up">
+    <p class="section-tag">Self Awareness</p>
+    <h2 class="section-title">Gap Analysis</h2>
+    <div class="section-title-underline"></div>
+    <p class="gap-intro">An analytical breakdown mapping current academic baselines against the industry standard technical criteria required for enterprise data roles.</p>
+    <div class="gap-grid">
+      <!-- Knowledge Gap -->
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <h3>Knowledge Gap</h3>
+        </div>
+        <div class="gap-section">
+          <p class="gap-section-label">📍 Current Baseline</p>
+          <ul class="gap-list">
+            <li>Basic understanding of MS Office utility tools</li>
+            <li>Introductory syntax for Python, HTML, JS, PHP</li>
+            <li>Academic level understanding of structured data</li>
+          </ul>
+        </div>
+        <div class="gap-arrow">↓</div>
+        <div class="gap-section">
+          <p class="gap-section-label" style="color:var(--navy);">🎯 Required Target</p>
+          <ul class="gap-list target">
+            <li><strong>Advanced Excel</strong> (complex formulas &amp; pivot matrices)</li>
+            <li><strong>Strong SQL</strong> query construction fundamentals</li>
+            <li><strong>Practical understanding</strong> of corporate database environments</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Skills Gap -->
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <h3>Skills Gap</h3>
+        </div>
+        <div class="gap-section">
+          <p class="gap-section-label">📍 Current Baseline</p>
+          <ul class="gap-list">
+            <li>Basic keyboard data entry &amp; academic research inputs</li>
+            <li>Foundational peer coordination in university group projects</li>
+            <li>Executing structured development tasks under instruction</li>
+          </ul>
+        </div>
+        <div class="gap-arrow">↓</div>
+        <div class="gap-section">
+          <p class="gap-section-label" style="color:var(--navy);">🎯 Required Target</p>
+          <ul class="gap-list target">
+            <li><strong>Professional-grade</strong> typing accuracy and rapid speeds</li>
+            <li><strong>Complex, clear</strong> reporting frameworks and summaries</li>
+            <li><strong>Database schema</strong> handling, documentation, and error checks</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Experience Gap -->
+      <div class="gap-card">
+        <div class="gap-card-head">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <h3>Experience Gap</h3>
+        </div>
+        <div class="gap-section">
+          <p class="gap-section-label">📍 Current Baseline</p>
+          <ul class="gap-list">
+            <li>Delivering university software projects (web/mobile)</li>
+            <li>Commanding leadership roles as school Senior Prefect</li>
+            <li>Rigorous discipline developed in competitive sport karate</li>
+          </ul>
+        </div>
+        <div class="gap-arrow">↓</div>
+        <div class="gap-section">
+          <p class="gap-section-label" style="color:var(--navy);">🎯 Required Target</p>
+          <ul class="gap-list target">
+            <li><strong>Internship</strong> in formal administrative/data roles</li>
+            <li><strong>Corporate workspace exposure</strong> handling databases</li>
+            <li><strong>Live data systems</strong> operational familiarity with enterprise tools</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SLIDE 14 — ACTION PLAN
+═══════════════════════════════════════════ -->
+<section id="action">
+  <div class="container fade-up">
+    <p class="section-tag">Roadmap</p>
+    <h2 class="section-title">Three-Year Action Plan</h2>
+    <div class="section-title-underline"></div>
+    <p class="action-intro">A phased three-year execution roadmap mapping out measurable academic benchmarks, technical upskilling targets, and milestone transition points into enterprise data management.</p>
+    <div class="action-grid">
+      <div class="action-card">
+        <div class="action-card-header y1">
+          <div class="action-num">01</div>
+          <div class="action-head-text">
+            <h3>Foundation</h3>
+            <p>Academic &amp; Core Tools</p>
+          </div>
+        </div>
+        <div class="action-body">
+          <p class="action-focus">Focus: Strengthen basic technical knowledge and complete the academic journey successfully.</p>
+          <ul class="action-items" style="list-style:disc;padding-left:1.2rem;">
+            <li style="display:list-item;">Successfully complete the B.Sc. Applied Sciences degree with consistent academic performance.</li>
+            <li style="display:list-item;">Advance Microsoft Excel proficiency across formulas, pivot tables, and data analytics functions.</li>
+            <li style="display:list-item;">Refine Microsoft Office Suite competency and professional typing speed and accuracy.</li>
+            <li style="display:list-item;">Build foundational understanding of database concepts and structured data entry workflows.</li>
+            <li style="display:list-item;">Complete targeted online certifications in data management and administrative systems.</li>
+            <li style="display:list-item;">Design and launch a professional portfolio website to document academic and project achievements.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="action-card-header y2">
+          <div class="action-num">02</div>
+          <div class="action-head-text">
+            <h3>Development</h3>
+            <p>Experience &amp; Scripting</p>
+          </div>
+        </div>
+        <div class="action-body">
+          <p class="action-focus">Focus: Gain industry standard practical experience and expand database capabilities.</p>
+          <ul class="action-items" style="list-style:disc;padding-left:1.2rem;">
+            <li style="display:list-item;">Actively apply for administrative internships or entry level data trainee positions.</li>
+            <li style="display:list-item;">Gain practical exposure to live corporate data registries and real-world record management.</li>
+            <li style="display:list-item;">Develop intermediate SQL query skills and a solid understanding of relational database architecture.</li>
+            <li style="display:list-item;">Strengthen professional communication, workplace etiquette, and cross functional collaboration.</li>
+            <li style="display:list-item;">Publish functional utility tools and data projects to a structured GitHub repository.</li>
+            <li style="display:list-item;">Consistently improve data task speed, accuracy, and error checking discipline.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="action-card">
+        <div class="action-card-header y3">
+          <div class="action-num">03</div>
+          <div class="action-head-text">
+            <h3>Career Entry</h3>
+            <p>Enterprise Integration</p>
+          </div>
+        </div>
+        <div class="action-body">
+          <p class="action-focus">Focus: Transition into full time professional data administrative assignments.</p>
+          <ul class="action-items" style="list-style:disc;padding-left:1.2rem;">
+            <li style="display:list-item;">Pursue full time opportunities as a Data Management Assistant in a reputable organization.</li>
+            <li style="display:list-item;">Take ownership of responsibilities within formal enterprise data platforms and corporate systems.</li>
+            <li style="display:list-item;">Develop and refine structured administrative reporting and data documentation frameworks.</li>
+            <li style="display:list-item;">Acquire proficiency in proprietary industry data suites and enterprise software tools.</li>
+            <li style="display:list-item;">Sustain continuous professional growth through specialist technical training and certifications.</li>
+            <li style="display:list-item;">Establish a strong, credible track record of reliable, high quality career contributions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Dinushika Priyadarshani</span> &nbsp;·&nbsp; Applied Sciences Portfolio &nbsp;·&nbsp; Built with care</p>
+</footer>
+
+<script>
+  // Scroll-triggered fade-up animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
